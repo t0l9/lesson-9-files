@@ -1,0 +1,14 @@
+{
+  "id":63,
+  "value_date":"12-05-2025",
+  "ndoc":"98",
+  "amount":3000,
+  "currency":"KZT",
+  "receiver":{
+    "code":"19",
+    "bankIdentifierCode":"KYRTDHBN"
+  },
+  "signatureA":"Абановрк У.С.",
+  "signatureB":"Хралвркт М.У.",
+  "narrative":"Перевод"
+}
