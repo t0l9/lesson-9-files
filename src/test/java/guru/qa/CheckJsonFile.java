@@ -42,11 +42,15 @@ public class CheckJsonFile {
 
     @Test
     void checkJsonFile()  throws Exception{
-        File jsonFile = new File("pt.json");
+        File jsonFile = new File("src/test/resources/pt.json");
         ObjectMapper mapper = new ObjectMapper();
+
         Payment payment = mapper.readValue(jsonFile, Payment.class);
+        Receiver receiver = mapper.readValue(jsonFile, Receiver.class);
 
         Assertions.assertEquals(63, payment.getId());
+        Assertions.assertEquals("19", receiver.getCode());
+        Assertions.assertEquals("KYRTDHBN", receiver.getBankIdentifierCode());
     }
 
 
