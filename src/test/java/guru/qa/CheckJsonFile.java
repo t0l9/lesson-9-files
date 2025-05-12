@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
+import java.io.File;
 import java.io.InputStream;
 
 
@@ -21,7 +22,7 @@ public class CheckJsonFile {
     @Test
     void checkJsonFileTest() throws Exception {
 
-        try (InputStream jsonStream = cl.getResourceAsStream("payment.json")) {
+        try (InputStream jsonStream = cl.getResourceAsStream("pt.json")) {
             if (jsonStream == null) {
                 throw new IllegalArgumentException("JSON file not found");
             }
@@ -37,6 +38,15 @@ public class CheckJsonFile {
             Assertions.assertEquals("19", receiver.getCode());
             Assertions.assertEquals("KYRTDHBN", receiver.getBankIdentifierCode());
         }
+    }
+
+    @Test
+    void checkJsonFile()  throws Exception{
+        File jsonFile = new File("pt.json");
+        ObjectMapper mapper = new ObjectMapper();
+        Payment payment = mapper.readValue(jsonFile, Payment.class);
+
+        Assertions.assertEquals(63, payment.getId());
     }
 
 
