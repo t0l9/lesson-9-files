@@ -21,8 +21,6 @@ public class CheckFilesFromZip {
 
     private ClassLoader cl = CheckFilesFromZip.class.getClassLoader();
 
-
-
     @Test
     void zipFileParsingTest() throws Exception{
 
@@ -54,8 +52,6 @@ public class CheckFilesFromZip {
                             break;
                     }
                 }
-
-
             }
         }
     }
@@ -93,6 +89,4 @@ public class CheckFilesFromZip {
             );
         }
     }
-
-
 }

@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-import java.io.File;
 import java.io.InputStream;
 
 
@@ -17,7 +16,6 @@ public class CheckJsonFile {
 
 
     private ClassLoader cl = CheckJsonFile.class.getClassLoader();
-
 
     @Test
     void checkJsonFileTest() throws Exception {
