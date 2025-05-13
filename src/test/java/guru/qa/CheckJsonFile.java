@@ -29,28 +29,13 @@ public class CheckJsonFile {
 
             ObjectMapper mapper = new ObjectMapper();
             JsonParser parser = mapper.getFactory().createParser(jsonStream);
-
-
             Payment payment = mapper.readValue(parser, Payment.class);
-            Receiver receiver = mapper.readValue(parser, Receiver.class);
+            Receiver receiver = payment.getReceiver();
 
             Assertions.assertEquals(63, payment.getId());
             Assertions.assertEquals("19", receiver.getCode());
             Assertions.assertEquals("KYRTDHBN", receiver.getBankIdentifierCode());
         }
-    }
-
-    @Test
-    void checkJsonFile()  throws Exception{
-        File jsonFile = new File("src/test/resources/pt.json");
-        ObjectMapper mapper = new ObjectMapper();
-
-        Payment payment = mapper.readValue(jsonFile, Payment.class);
-        Receiver receiver = mapper.readValue(jsonFile, Receiver.class);
-
-        Assertions.assertEquals(63, payment.getId());
-        Assertions.assertEquals("19", receiver.getCode());
-        Assertions.assertEquals("KYRTDHBN", receiver.getBankIdentifierCode());
     }
 
 
